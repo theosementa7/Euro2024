@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct SoccerTeam {
+struct SoccerTeam: Identifiable {
+    var id: UUID = UUID()
     let name: String
     let primaryColor: Color
     let secondaryColor: Color
