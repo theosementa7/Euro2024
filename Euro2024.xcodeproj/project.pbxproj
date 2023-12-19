@@ -10,6 +10,7 @@
 		D940501C2B31A7E40063E278 /* SoccerTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940501B2B31A7E40063E278 /* SoccerTeam.swift */; };
 		D940501F2B31A8270063E278 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940501E2B31A8270063E278 /* Color.swift */; };
 		D94050212B31AA460063E278 /* GroupTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050202B31AA460063E278 /* GroupTeam.swift */; };
+		D94050232B31AB7A0063E278 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050222B31AB7A0063E278 /* TeamManager.swift */; };
 		D961DAE82B31A5C1004238DA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE72B31A5C1004238DA /* App.swift */; };
 		D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE92B31A5C1004238DA /* HomeView.swift */; };
 		D961DAEC2B31A5C2004238DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961DAEB2B31A5C2004238DA /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		D940501B2B31A7E40063E278 /* SoccerTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerTeam.swift; sourceTree = "<group>"; };
 		D940501E2B31A8270063E278 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D94050202B31AA460063E278 /* GroupTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTeam.swift; sourceTree = "<group>"; };
+		D94050222B31AB7A0063E278 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
 		D961DAE42B31A5C1004238DA /* Euro2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Euro2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D961DAE72B31A5C1004238DA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D961DAE92B31A5C1004238DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				D940501D2B31A8180063E278 /* Extensions */,
+				D94050222B31AB7A0063E278 /* TeamManager.swift */,
 				D961DAEB2B31A5C2004238DA /* Assets.xcassets */,
 			);
 			path = Ressources;
@@ -198,6 +201,7 @@
 				D940501C2B31A7E40063E278 /* SoccerTeam.swift in Sources */,
 				D94050212B31AA460063E278 /* GroupTeam.swift in Sources */,
 				D961DAE82B31A5C1004238DA /* App.swift in Sources */,
+				D94050232B31AB7A0063E278 /* TeamManager.swift in Sources */,
 				D940501F2B31A8270063E278 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,8 +342,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,9 +351,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sementa.com.Euro2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -367,8 +374,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,9 +383,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sementa.com.Euro2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

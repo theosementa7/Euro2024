@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct GroupTeam {
+struct GroupTeam: Identifiable {
+    var id: UUID = UUID()
     var title: String
     var teams: [SoccerTeam]
 }
