@@ -12,47 +12,66 @@ struct HomeView: View {
     
     // Custom Type
     @ObservedObject var teamManager = TeamManager.shared
+    @ObservedObject var vm = DataViewModel.shared
     
     // String Variable
     @State private var searchText: String = ""
     
     // Computed Variables
-    var searchResults: [GroupTeam] {
+    var searchResults: [GroupEntity] {
         if searchText.isEmpty {
-            return teamManager.groups
+            return vm.groups
         } else {
-            return teamManager.groups.filter({ $0.teams.contains(where: { $0.name.localizedCaseInsensitiveContains(searchText) }) })
+            return vm.groups.filter({ $0.teams.contains(where: { $0.name.localizedCaseInsensitiveContains(searchText) }) })
         }
     }
 
     //MARK: - body
     var body: some View {
         NavigationStack {
-            List(searchResults) { group in
-                Section(content: {
-                    ForEach(group.teams) { team in
-                        NavigationLink(destination: {
-                            MatchCalendarView(mainTeam: team, group: group)
-                        }, label: {
+            List {
+                if searchResults.isEmpty && vm.groups.isEmpty {
+                    Section {
+                        ForEach(vm.teams.sorted(by: { $0.name < $1.name })) { team in
                             Text(team.name)
+                        }
+                    }
+                } else if !searchResults.isEmpty {
+                    ForEach(searchResults.sorted(by: { $0.name < $1.name })) { group in
+                        Section(content: {
+                            ForEach(group.teams) { team in
+                                NavigationLink(destination: {
+                                    MatchCalendarView(mainTeam: team, group: group)
+                                }, label: {
+                                    Text(team.name)
+                                })
+                            }
+                        }, header: {
+                            Text("Groupe \(group.name)")
                         })
                     }
-                }, header: {
-                    Text("Groupe \(group.title)")
-                })
-                
-                if let lastItem = searchResults.last {
-                    if lastItem.id == group.id {
-                        Rectangle()
-                            .foregroundStyle(Color.clear)
-                            .frame(height: 40)
-                            .listRowBackground(Color.clear)
-                    }
                 }
+                
+                Rectangle()
+                    .foregroundStyle(Color.clear)
+                    .frame(height: 40)
+                    .listRowBackground(Color.clear)
             }
             .scrollIndicators(.hidden)
+            .overlay {
+                if searchResults.isEmpty && !vm.groups.isEmpty {
+                    ContentUnavailableView(label: {
+                        Label("Pays introuvable", systemImage: "person.3.fill")
+                    }, description: {
+                        Text("Ce pays n'est pas séléctionnée.")
+                    }, actions: { })
+                }
+            }
             .overlay(alignment: .bottom) {
-                Button(action: { teamManager.createGroups() }, label: {
+                Button(action: {
+                    vm.createGroups()
+                    
+                }, label: {
                     HStack {
                         Spacer()
                         Text("Tirer au sort")
@@ -81,5 +100,4 @@ struct HomeView: View {
 //MARK: - Preview
 #Preview {
     HomeView()
-        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

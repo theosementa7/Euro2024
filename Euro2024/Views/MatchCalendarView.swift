@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MatchCalendarView: View {
     
-    var mainTeam: SoccerTeam
-    var group: GroupTeam
+    var mainTeam: TeamEntity
+    var group: GroupEntity
     
     var body: some View {
         Form {
@@ -25,16 +25,16 @@ struct MatchCalendarView: View {
     }
 }
 
-#Preview {
-    MatchCalendarView(
-        mainTeam: teamsData[1],
-        group: GroupTeam(
-            title: "A",
-            teams: [
-                teamsData[1],
-                teamsData[2],
-                teamsData[3]
-            ]
-        )
-    )
-}
+//#Preview {
+//    MatchCalendarView(
+//        mainTeam: teamsData[1],
+//        group: GroupTeam(
+//            title: "A",
+//            teams: [
+//                teamsData[1],
+//                teamsData[2],
+//                teamsData[3]
+//            ]
+//        )
+//    )
+//}

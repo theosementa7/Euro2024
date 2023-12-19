@@ -12,6 +12,9 @@
 		D94050212B31AA460063E278 /* GroupTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050202B31AA460063E278 /* GroupTeam.swift */; };
 		D94050232B31AB7A0063E278 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050222B31AB7A0063E278 /* TeamManager.swift */; };
 		D94050272B31C5900063E278 /* MatchCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050262B31C5900063E278 /* MatchCalendarView.swift */; };
+		D940502B2B31C72F0063E278 /* TeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050292B31C72F0063E278 /* TeamEntity.swift */; };
+		D940502F2B31C7BD0063E278 /* GroupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940502D2B31C7BD0063E278 /* GroupEntity.swift */; };
+		D94050322B31C82E0063E278 /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050312B31C82E0063E278 /* DataViewModel.swift */; };
 		D961DAE82B31A5C1004238DA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE72B31A5C1004238DA /* App.swift */; };
 		D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE92B31A5C1004238DA /* HomeView.swift */; };
 		D961DAEC2B31A5C2004238DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961DAEB2B31A5C2004238DA /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		D94050202B31AA460063E278 /* GroupTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTeam.swift; sourceTree = "<group>"; };
 		D94050222B31AB7A0063E278 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
 		D94050262B31C5900063E278 /* MatchCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCalendarView.swift; sourceTree = "<group>"; };
+		D94050292B31C72F0063E278 /* TeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEntity.swift; sourceTree = "<group>"; };
+		D940502D2B31C7BD0063E278 /* GroupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEntity.swift; sourceTree = "<group>"; };
+		D94050312B31C82E0063E278 /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		D961DAE42B31A5C1004238DA /* Euro2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Euro2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D961DAE72B31A5C1004238DA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D961DAE92B31A5C1004238DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -60,6 +66,8 @@
 			children = (
 				D961DAF02B31A5C2004238DA /* Persistence.swift */,
 				D961DAF22B31A5C2004238DA /* Euro2024.xcdatamodeld */,
+				D94050292B31C72F0063E278 /* TeamEntity.swift */,
+				D940502D2B31C7BD0063E278 /* GroupEntity.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -91,6 +99,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D94050302B31C8140063E278 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D94050312B31C82E0063E278 /* DataViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D961DADB2B31A5C1004238DA = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +128,7 @@
 			children = (
 				D961DAE72B31A5C1004238DA /* App.swift */,
 				D94050172B31A79E0063E278 /* Views */,
+				D94050302B31C8140063E278 /* ViewModel */,
 				D940501A2B31A7D50063E278 /* Model */,
 				D94050182B31A7AE0063E278 /* CoreData */,
 				D94050192B31A7BF0063E278 /* Ressources */,
@@ -198,12 +215,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D940502F2B31C7BD0063E278 /* GroupEntity.swift in Sources */,
 				D961DAF42B31A5C2004238DA /* Euro2024.xcdatamodeld in Sources */,
 				D961DAF12B31A5C2004238DA /* Persistence.swift in Sources */,
+				D940502B2B31C72F0063E278 /* TeamEntity.swift in Sources */,
 				D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */,
 				D940501C2B31A7E40063E278 /* SoccerTeam.swift in Sources */,
 				D94050212B31AA460063E278 /* GroupTeam.swift in Sources */,
 				D94050272B31C5900063E278 /* MatchCalendarView.swift in Sources */,
+				D94050322B31C82E0063E278 /* DataViewModel.swift in Sources */,
 				D961DAE82B31A5C1004238DA /* App.swift in Sources */,
 				D94050232B31AB7A0063E278 /* TeamManager.swift in Sources */,
 				D940501F2B31A8270063E278 /* Color.swift in Sources */,
