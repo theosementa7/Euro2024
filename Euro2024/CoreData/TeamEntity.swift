@@ -149,5 +149,13 @@ extension TeamEntity {
         return num
     }
     
+    func goalDiff() -> Int {
+        if numberOfGoalScored() > numberOfGoalConceded() {
+            return numberOfGoalScored() - numberOfGoalConceded()
+        } else {
+            return numberOfGoalConceded() - numberOfGoalScored()
+        }
+    }
+    
 }
 

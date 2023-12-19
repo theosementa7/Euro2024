@@ -59,6 +59,11 @@ struct MatchCalendarView: View {
                     Spacer()
                     Text(teamSelected.numberOfGoalConceded().formatted())
                 }
+                HStack {
+                    Text("Différence de but")
+                    Spacer()
+                    Text(teamSelected.goalDiff().formatted())
+                }
             }, header: {
                 Text("STATS - GOALS")
             })
