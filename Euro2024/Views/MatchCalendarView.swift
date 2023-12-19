@@ -28,11 +28,42 @@ struct MatchCalendarView: View {
                 Text(teamSelected.name)
             })
             
+            Section(content: {
+                HStack {
+                    Text("Nombre de matchs gagnés")
+                    Spacer()
+                    Text(teamSelected.numberOfMatchWin.formatted())
+                }
+                HStack {
+                    Text("Nombre de matchs nul")
+                    Spacer()
+                    Text(teamSelected.numberOfMatchNul.formatted())
+                }
+                HStack {
+                    Text("Nombre de matchs perdus")
+                    Spacer()
+                    Text(teamSelected.numberOfMatchLose.formatted())
+                }
+            }, header: {
+                Text("STATS - WIN")
+            })
+            
+            Section(content: {
+                HStack {
+                    Text("Nombre de but marqués")
+                    Spacer()
+                    Text(teamSelected.numberOfGoalScored().formatted())
+                }
+                HStack {
+                    Text("Nombre de but concédés")
+                    Spacer()
+                    Text(teamSelected.numberOfGoalConceded().formatted())
+                }
+            }, header: {
+                Text("STATS - GOALS")
+            })
         }
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            vm.createMatchesForGroup(group: group, team: teamSelected)
-        }
     }
     
     func otherTeamWithScore(match: MatchEntity) -> (TeamEntity, Int) {

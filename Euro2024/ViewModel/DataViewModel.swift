@@ -169,38 +169,48 @@ extension DataViewModel {
         fetchGroups()
     }
     
-    func createMatchesForGroup(group: GroupEntity, team: TeamEntity) {
-
+    func createMatchesForGroup(group: GroupEntity) {
         let teams = group.teams
         let matchs = group.matchs
 
-        for otherTeam in teams where otherTeam != team {
-            // Vérifie si ce match n'existe pas déjà
-            if !matchExistsBetweenTeams(teamA: team, teamB: otherTeam, matches: matchs) {
-                
-                // Crée un match entre les équipes
-                let match = MatchEntity(context: context)
-                match.id = UUID()
-                match.teamOne = team
-                match.teamTwo = otherTeam
-                match.scoreTeamOne = Int16(generateScoreWithFIFARanking(team: team))
-                match.scoreTeamTwo = Int16(generateScoreWithFIFARanking(team: otherTeam))
-                match.matchToGroup = group
+        for (index, teamA) in teams.enumerated() {
+            for j in index+1..<teams.count {
+                let teamB = teams[j]
 
-                // Enregistre le match
-                do {
-                    try context.save()
-                } catch {
-                    print("Error saving match: \(error)")
+                // Vérifie si ce match n'existe pas déjà
+                if !matchExistsBetweenTeams(teamA: teamA, teamB: teamB, matchs: matchs) {
+                    // Crée un match entre les équipes
+                    let match = MatchEntity(context: context)
+                    match.id = UUID()
+                    match.teamOne = teamA
+                    match.teamTwo = teamB
+                    match.scoreTeamOne = Int16(Int.random(in: 0...4)) // Int16(generateScoreWithFIFARanking(team: teamA))
+                    match.scoreTeamTwo = Int16(Int.random(in: 0...4)) // Int16(generateScoreWithFIFARanking(team: teamB))
+                    match.matchToGroup = group
+
+                    // Enregistre le match
+                    do {
+                        try context.save()
+                    } catch {
+                        print("Error saving match: \(error)")
+                    }
                 }
             }
         }
-        
+
         fetchGroups()
     }
 
-    func matchExistsBetweenTeams(teamA: TeamEntity, teamB: TeamEntity, matches: [MatchEntity]) -> Bool {
-        return matches.contains { ($0.teamOne == teamA && $0.teamTwo == teamB) || ($0.teamOne == teamB && $0.teamTwo == teamA) }
+    func matchExistsBetweenTeams(teamA: TeamEntity, teamB: TeamEntity, matchs: [MatchEntity]) -> Bool {
+        for match in matchs {
+            if match.teamOne == teamA && match.teamTwo == teamB {
+                return true
+            }
+            if match.teamTwo == teamA && match.teamOne == teamB {
+                return true
+            }
+        }
+        return false
     }
 
     func generateScoreWithFIFARanking(team: TeamEntity) -> Int {
