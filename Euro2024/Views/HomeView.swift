@@ -31,7 +31,11 @@ struct HomeView: View {
             List(searchResults) { group in
                 Section(content: {
                     ForEach(group.teams) { team in
-                        Text(team.name)
+                        NavigationLink(destination: {
+                            MatchCalendarView(mainTeam: team, group: group)
+                        }, label: {
+                            Text(team.name)
+                        })
                     }
                 }, header: {
                     Text("Groupe \(group.title)")

@@ -11,6 +11,7 @@
 		D940501F2B31A8270063E278 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940501E2B31A8270063E278 /* Color.swift */; };
 		D94050212B31AA460063E278 /* GroupTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050202B31AA460063E278 /* GroupTeam.swift */; };
 		D94050232B31AB7A0063E278 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050222B31AB7A0063E278 /* TeamManager.swift */; };
+		D94050272B31C5900063E278 /* MatchCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050262B31C5900063E278 /* MatchCalendarView.swift */; };
 		D961DAE82B31A5C1004238DA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE72B31A5C1004238DA /* App.swift */; };
 		D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE92B31A5C1004238DA /* HomeView.swift */; };
 		D961DAEC2B31A5C2004238DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961DAEB2B31A5C2004238DA /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		D940501E2B31A8270063E278 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D94050202B31AA460063E278 /* GroupTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTeam.swift; sourceTree = "<group>"; };
 		D94050222B31AB7A0063E278 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
+		D94050262B31C5900063E278 /* MatchCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCalendarView.swift; sourceTree = "<group>"; };
 		D961DAE42B31A5C1004238DA /* Euro2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Euro2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D961DAE72B31A5C1004238DA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D961DAE92B31A5C1004238DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				D961DAE92B31A5C1004238DA /* HomeView.swift */,
+				D94050262B31C5900063E278 /* MatchCalendarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */,
 				D940501C2B31A7E40063E278 /* SoccerTeam.swift in Sources */,
 				D94050212B31AA460063E278 /* GroupTeam.swift in Sources */,
+				D94050272B31C5900063E278 /* MatchCalendarView.swift in Sources */,
 				D961DAE82B31A5C1004238DA /* App.swift in Sources */,
 				D94050232B31AB7A0063E278 /* TeamManager.swift in Sources */,
 				D940501F2B31A8270063E278 /* Color.swift in Sources */,
