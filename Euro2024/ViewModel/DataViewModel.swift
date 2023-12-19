@@ -23,7 +23,6 @@ class DataViewModel: ObservableObject {
     
     init() {
         fetchTeams { result in
-            print("🔥 RESULTS : \(result)")
             if !result {
                 self.createTeams()
                 self.fetchTeams { _ in }
@@ -168,6 +167,53 @@ extension DataViewModel {
         }
         
         fetchGroups()
+    }
+    
+    func createMatchesForGroup(group: GroupEntity, team: TeamEntity) {
+
+        let teams = group.teams
+        let matchs = group.matchs
+
+        for otherTeam in teams where otherTeam != team {
+            // Vérifie si ce match n'existe pas déjà
+            if !matchExistsBetweenTeams(teamA: team, teamB: otherTeam, matches: matchs) {
+                
+                // Crée un match entre les équipes
+                let match = MatchEntity(context: context)
+                match.id = UUID()
+                match.teamOne = team
+                match.teamTwo = otherTeam
+                match.scoreTeamOne = Int16(generateScoreWithFIFARanking(team: team))
+                match.scoreTeamTwo = Int16(generateScoreWithFIFARanking(team: otherTeam))
+                match.matchToGroup = group
+
+                // Enregistre le match
+                do {
+                    try context.save()
+                } catch {
+                    print("Error saving match: \(error)")
+                }
+            }
+        }
+        
+        fetchGroups()
+    }
+
+    func matchExistsBetweenTeams(teamA: TeamEntity, teamB: TeamEntity, matches: [MatchEntity]) -> Bool {
+        return matches.contains { ($0.teamOne == teamA && $0.teamTwo == teamB) || ($0.teamOne == teamB && $0.teamTwo == teamA) }
+    }
+
+    func generateScoreWithFIFARanking(team: TeamEntity) -> Int {
+        let averageGoals: Double = 2.37
+        let fifaRanking = Int(team.fifaRanking)
+
+        let rankingFactor = 1.0 - Double(fifaRanking) / 100.0
+
+        let standardDeviation: Double = 0.24
+
+        let goals = Int(round((averageGoals + standardDeviation * Double.random(in: -1...1)) * rankingFactor))
+
+        return goals
     }
     
 }

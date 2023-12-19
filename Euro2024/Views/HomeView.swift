@@ -11,7 +11,6 @@ import CoreData
 struct HomeView: View {
     
     // Custom Type
-    @ObservedObject var teamManager = TeamManager.shared
     @ObservedObject var vm = DataViewModel.shared
     
     // String Variable
@@ -41,7 +40,7 @@ struct HomeView: View {
                         Section(content: {
                             ForEach(group.teams) { team in
                                 NavigationLink(destination: {
-                                    MatchCalendarView(mainTeam: team, group: group)
+                                    MatchCalendarView(teamSelected: team, group: group)
                                 }, label: {
                                     Text(team.name)
                                 })
@@ -70,7 +69,6 @@ struct HomeView: View {
             .overlay(alignment: .bottom) {
                 Button(action: {
                     vm.createGroups()
-                    
                 }, label: {
                     HStack {
                         Spacer()

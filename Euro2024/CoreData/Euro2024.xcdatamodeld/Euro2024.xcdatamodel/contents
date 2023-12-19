@@ -3,7 +3,16 @@
     <entity name="GroupEntity" representedClassName="GroupEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="groupToMatch" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MatchEntity" inverseName="matchToGroup" inverseEntity="MatchEntity"/>
         <relationship name="groupToTeam" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TeamEntity" inverseName="teamToGroup" inverseEntity="TeamEntity"/>
+    </entity>
+    <entity name="MatchEntity" representedClassName="MatchEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="scoreTeamOne" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="scoreTeamTwo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="matchToGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupEntity" inverseName="groupToMatch" inverseEntity="GroupEntity"/>
+        <relationship name="teamOne" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TeamEntity"/>
+        <relationship name="teamTwo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TeamEntity"/>
     </entity>
     <entity name="TeamEntity" representedClassName="TeamEntity" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String"/>

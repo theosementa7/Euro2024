@@ -9,20 +9,48 @@ import SwiftUI
 
 struct MatchCalendarView: View {
     
-    var mainTeam: TeamEntity
+    @ObservedObject var vm = DataViewModel.shared
+    
+    var teamSelected: TeamEntity
     var group: GroupEntity
     
     var body: some View {
-        Form {
-            ForEach(group.teams.filter({ $0.id != mainTeam.id })) { team in
-                HStack {
-                    Text(mainTeam.name + " - " + team.name)
-                    Spacer()
+        List {
+            Section(content: {
+                ForEach(group.matchs.filter({ $0.teamOne == teamSelected || $0.teamTwo == teamSelected })) { match in
+                    HStack {
+                        Text(teamSelected.name + " - " + otherTeamWithScore(match: match).0.name)
+                        Spacer()
+                        Text(mainTeamGoal(match: match).formatted() + " - " + otherTeamWithScore(match: match).1.formatted())
+                    }
                 }
-            }
+            }, header: {
+                Text(teamSelected.name)
+            })
+            
         }
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            vm.createMatchesForGroup(group: group, team: teamSelected)
+        }
     }
+    
+    func otherTeamWithScore(match: MatchEntity) -> (TeamEntity, Int) {
+        if match.teamOne == teamSelected {
+            return (match.teamTwo, Int(match.scoreTeamTwo))
+        } else {
+            return (match.teamOne, Int(match.scoreTeamOne))
+        }
+    }
+    
+    func mainTeamGoal(match: MatchEntity) -> Int {
+        if match.scoreTeamOne == otherTeamWithScore(match: match).1 {
+            return Int(match.scoreTeamTwo)
+        } else {
+            return Int(match.scoreTeamOne)
+        }
+    }
+    
 }
 
 //#Preview {

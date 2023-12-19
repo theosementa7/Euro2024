@@ -5,10 +5,9 @@
 //  Created by KaayZenn on 19/12/2023.
 //
 
-import SwiftUI
+import Foundation
 
-struct SoccerTeam: Identifiable {
-    var id: UUID = UUID()
+struct SoccerTeam {
     let name: String
     let primaryColor: String
     let secondaryColor: String
@@ -16,7 +15,6 @@ struct SoccerTeam: Identifiable {
     let code: String
     let hat: Int
     let playoff: String
-    var score: Int = 0
 }
 
 let teamsData = [
