@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D961DAE82B31A5C1004238DA /* Euro2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE72B31A5C1004238DA /* Euro2024App.swift */; };
-		D961DAEA2B31A5C1004238DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE92B31A5C1004238DA /* ContentView.swift */; };
+		D940501C2B31A7E40063E278 /* SoccerTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940501B2B31A7E40063E278 /* SoccerTeam.swift */; };
+		D940501F2B31A8270063E278 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940501E2B31A8270063E278 /* Color.swift */; };
+		D94050212B31AA460063E278 /* GroupTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050202B31AA460063E278 /* GroupTeam.swift */; };
+		D961DAE82B31A5C1004238DA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE72B31A5C1004238DA /* App.swift */; };
+		D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE92B31A5C1004238DA /* HomeView.swift */; };
 		D961DAEC2B31A5C2004238DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961DAEB2B31A5C2004238DA /* Assets.xcassets */; };
 		D961DAEF2B31A5C2004238DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961DAEE2B31A5C2004238DA /* Preview Assets.xcassets */; };
 		D961DAF12B31A5C2004238DA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAF02B31A5C2004238DA /* Persistence.swift */; };
@@ -16,9 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D940501B2B31A7E40063E278 /* SoccerTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerTeam.swift; sourceTree = "<group>"; };
+		D940501E2B31A8270063E278 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D94050202B31AA460063E278 /* GroupTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTeam.swift; sourceTree = "<group>"; };
 		D961DAE42B31A5C1004238DA /* Euro2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Euro2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D961DAE72B31A5C1004238DA /* Euro2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euro2024App.swift; sourceTree = "<group>"; };
-		D961DAE92B31A5C1004238DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D961DAE72B31A5C1004238DA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		D961DAE92B31A5C1004238DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D961DAEB2B31A5C2004238DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D961DAEE2B31A5C2004238DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D961DAF02B31A5C2004238DA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -36,6 +42,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D94050172B31A79E0063E278 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D961DAE92B31A5C1004238DA /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D94050182B31A7AE0063E278 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D961DAF02B31A5C2004238DA /* Persistence.swift */,
+				D961DAF22B31A5C2004238DA /* Euro2024.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D94050192B31A7BF0063E278 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				D940501D2B31A8180063E278 /* Extensions */,
+				D961DAEB2B31A5C2004238DA /* Assets.xcassets */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		D940501A2B31A7D50063E278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D940501B2B31A7E40063E278 /* SoccerTeam.swift */,
+				D94050202B31AA460063E278 /* GroupTeam.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D940501D2B31A8180063E278 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D940501E2B31A8270063E278 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D961DADB2B31A5C1004238DA = {
 			isa = PBXGroup;
 			children = (
@@ -55,11 +104,11 @@
 		D961DAE62B31A5C1004238DA /* Euro2024 */ = {
 			isa = PBXGroup;
 			children = (
-				D961DAE72B31A5C1004238DA /* Euro2024App.swift */,
-				D961DAE92B31A5C1004238DA /* ContentView.swift */,
-				D961DAEB2B31A5C2004238DA /* Assets.xcassets */,
-				D961DAF02B31A5C2004238DA /* Persistence.swift */,
-				D961DAF22B31A5C2004238DA /* Euro2024.xcdatamodeld */,
+				D961DAE72B31A5C1004238DA /* App.swift */,
+				D94050172B31A79E0063E278 /* Views */,
+				D940501A2B31A7D50063E278 /* Model */,
+				D94050182B31A7AE0063E278 /* CoreData */,
+				D94050192B31A7BF0063E278 /* Ressources */,
 				D961DAED2B31A5C2004238DA /* Preview Content */,
 			);
 			path = Euro2024;
@@ -145,8 +194,11 @@
 			files = (
 				D961DAF42B31A5C2004238DA /* Euro2024.xcdatamodeld in Sources */,
 				D961DAF12B31A5C2004238DA /* Persistence.swift in Sources */,
-				D961DAEA2B31A5C1004238DA /* ContentView.swift in Sources */,
-				D961DAE82B31A5C1004238DA /* Euro2024App.swift in Sources */,
+				D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */,
+				D940501C2B31A7E40063E278 /* SoccerTeam.swift in Sources */,
+				D94050212B31AA460063E278 /* GroupTeam.swift in Sources */,
+				D961DAE82B31A5C1004238DA /* App.swift in Sources */,
+				D940501F2B31A8270063E278 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
