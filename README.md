@@ -1,0 +1,1 @@
+Euro2024 est une application mobile iOS développé par Théo Sementa. Elle permet de simuler l'Euro2024, la phase de groupe, les 16ème de finale etc etc... Vous pouvez égale suivre les matchs de chaque équipe ainsi que ses buts mis et encaissés.
