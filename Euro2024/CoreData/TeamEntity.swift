@@ -26,12 +26,16 @@ public class TeamEntity: NSManagedObject, Identifiable {
     @NSManaged public var hat: Int16
     @NSManaged public var playoff: String
     @NSManaged public var score: Int16
+    @NSManaged public var isIn16: Bool
+    @NSManaged public var isIn8: Bool
+    @NSManaged public var isIn4: Bool
+    @NSManaged public var isIn2: Bool
+    @NSManaged public var isWinner: Bool
     @NSManaged public var teamToGroup: GroupEntity?
     
     public var matchs: [MatchEntity] {
         var allMatchs: [MatchEntity] = []
-        var matchsOfTeam: [MatchEntity] = []
-        let request = NSFetchRequest<MatchEntity>(entityName: "MatchEntity")
+        let request: NSFetchRequest<MatchEntity> = MatchEntity.fetchRequest()
         
         do {
             allMatchs = try context.fetch(request)
@@ -39,33 +43,8 @@ public class TeamEntity: NSManagedObject, Identifiable {
             print("⚠️ \(error.localizedDescription)")
         }
         
-        if !allMatchs.isEmpty {
-            for match in allMatchs {
-                if match.teamOne == self || match.teamTwo == self {
-                    matchsOfTeam.append(match)
-                }
-            }
-        }
-        
-        return matchsOfTeam
+        return allMatchs.filter({ $0.teamOne == self || $0.teamTwo == self })
     }
-    
-    public var scoreOfTeam: Int {
-        var score: Int = 0
-        for match in matchs {
-            if let winner = match.winner {
-                if winner == self {
-                    score += 3
-                } else {
-                    // DEFEAT
-                }
-            } else {
-                score += 1
-            }
-        }
-        return score
-    }
-
 }
 
 // MARK: STATS WIN/LOSE/NUL

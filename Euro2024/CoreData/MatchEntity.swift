@@ -21,7 +21,7 @@ public class MatchEntity: NSManagedObject, Identifiable {
     @NSManaged public var scoreTeamTwo: Int16
     @NSManaged public var teamOne: TeamEntity
     @NSManaged public var teamTwo: TeamEntity
-    @NSManaged public var matchToGroup: GroupEntity
+    @NSManaged public var matchToGroup: GroupEntity?
     
     public var winner: TeamEntity? {
         if scoreTeamOne == scoreTeamTwo {
