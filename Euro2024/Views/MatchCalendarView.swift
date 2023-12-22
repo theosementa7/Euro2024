@@ -17,7 +17,7 @@ struct MatchCalendarView: View {
     var body: some View {
         List {
             Section(content: {
-                ForEach(group.matchs.filter({ $0.teamOne == teamSelected || $0.teamTwo == teamSelected })) { match in
+                ForEach(teamSelected.matchs) { match in
                     HStack {
                         Text(teamSelected.name + " - " + otherTeamWithScore(match: match).0.name)
                         Spacer()
