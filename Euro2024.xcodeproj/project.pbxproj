@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D961DAE82B31A5C1004238DA /* Euro2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE72B31A5C1004238DA /* Euro2024App.swift */; };
-		D961DAEA2B31A5C1004238DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE92B31A5C1004238DA /* ContentView.swift */; };
+		D940501F2B31A8270063E278 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940501E2B31A8270063E278 /* Color.swift */; };
+		D94050272B31C5900063E278 /* MatchCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050262B31C5900063E278 /* MatchCalendarView.swift */; };
+		D940502B2B31C72F0063E278 /* TeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050292B31C72F0063E278 /* TeamEntity.swift */; };
+		D940502F2B31C7BD0063E278 /* GroupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940502D2B31C7BD0063E278 /* GroupEntity.swift */; };
+		D94050322B31C82E0063E278 /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050312B31C82E0063E278 /* DataViewModel.swift */; };
+		D94050362B31D7240063E278 /* SoccerTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050352B31D7240063E278 /* SoccerTeam.swift */; };
+		D940503A2B31D8F30063E278 /* MatchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94050382B31D8F30063E278 /* MatchEntity.swift */; };
+		D961DAE82B31A5C1004238DA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE72B31A5C1004238DA /* App.swift */; };
+		D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAE92B31A5C1004238DA /* HomeView.swift */; };
 		D961DAEC2B31A5C2004238DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961DAEB2B31A5C2004238DA /* Assets.xcassets */; };
 		D961DAEF2B31A5C2004238DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961DAEE2B31A5C2004238DA /* Preview Assets.xcassets */; };
 		D961DAF12B31A5C2004238DA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961DAF02B31A5C2004238DA /* Persistence.swift */; };
@@ -16,9 +23,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D940501E2B31A8270063E278 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D94050262B31C5900063E278 /* MatchCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCalendarView.swift; sourceTree = "<group>"; };
+		D94050292B31C72F0063E278 /* TeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEntity.swift; sourceTree = "<group>"; };
+		D940502D2B31C7BD0063E278 /* GroupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEntity.swift; sourceTree = "<group>"; };
+		D94050312B31C82E0063E278 /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
+		D94050352B31D7240063E278 /* SoccerTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerTeam.swift; sourceTree = "<group>"; };
+		D94050382B31D8F30063E278 /* MatchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEntity.swift; sourceTree = "<group>"; };
 		D961DAE42B31A5C1004238DA /* Euro2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Euro2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D961DAE72B31A5C1004238DA /* Euro2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euro2024App.swift; sourceTree = "<group>"; };
-		D961DAE92B31A5C1004238DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D961DAE72B31A5C1004238DA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		D961DAE92B31A5C1004238DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D961DAEB2B31A5C2004238DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D961DAEE2B31A5C2004238DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D961DAF02B31A5C2004238DA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -36,6 +50,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D94050172B31A79E0063E278 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D961DAE92B31A5C1004238DA /* HomeView.swift */,
+				D94050262B31C5900063E278 /* MatchCalendarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D94050182B31A7AE0063E278 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D961DAF02B31A5C2004238DA /* Persistence.swift */,
+				D961DAF22B31A5C2004238DA /* Euro2024.xcdatamodeld */,
+				D94050292B31C72F0063E278 /* TeamEntity.swift */,
+				D940502D2B31C7BD0063E278 /* GroupEntity.swift */,
+				D94050382B31D8F30063E278 /* MatchEntity.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D94050192B31A7BF0063E278 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				D940501D2B31A8180063E278 /* Extensions */,
+				D961DAEB2B31A5C2004238DA /* Assets.xcassets */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		D940501A2B31A7D50063E278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D94050352B31D7240063E278 /* SoccerTeam.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D940501D2B31A8180063E278 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D940501E2B31A8270063E278 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D94050302B31C8140063E278 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D94050312B31C82E0063E278 /* DataViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D961DADB2B31A5C1004238DA = {
 			isa = PBXGroup;
 			children = (
@@ -55,11 +123,12 @@
 		D961DAE62B31A5C1004238DA /* Euro2024 */ = {
 			isa = PBXGroup;
 			children = (
-				D961DAE72B31A5C1004238DA /* Euro2024App.swift */,
-				D961DAE92B31A5C1004238DA /* ContentView.swift */,
-				D961DAEB2B31A5C2004238DA /* Assets.xcassets */,
-				D961DAF02B31A5C2004238DA /* Persistence.swift */,
-				D961DAF22B31A5C2004238DA /* Euro2024.xcdatamodeld */,
+				D961DAE72B31A5C1004238DA /* App.swift */,
+				D94050172B31A79E0063E278 /* Views */,
+				D94050302B31C8140063E278 /* ViewModel */,
+				D940501A2B31A7D50063E278 /* Model */,
+				D94050182B31A7AE0063E278 /* CoreData */,
+				D94050192B31A7BF0063E278 /* Ressources */,
 				D961DAED2B31A5C2004238DA /* Preview Content */,
 			);
 			path = Euro2024;
@@ -143,10 +212,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D940503A2B31D8F30063E278 /* MatchEntity.swift in Sources */,
+				D940502F2B31C7BD0063E278 /* GroupEntity.swift in Sources */,
 				D961DAF42B31A5C2004238DA /* Euro2024.xcdatamodeld in Sources */,
 				D961DAF12B31A5C2004238DA /* Persistence.swift in Sources */,
-				D961DAEA2B31A5C1004238DA /* ContentView.swift in Sources */,
-				D961DAE82B31A5C1004238DA /* Euro2024App.swift in Sources */,
+				D94050362B31D7240063E278 /* SoccerTeam.swift in Sources */,
+				D940502B2B31C72F0063E278 /* TeamEntity.swift in Sources */,
+				D961DAEA2B31A5C1004238DA /* HomeView.swift in Sources */,
+				D94050272B31C5900063E278 /* MatchCalendarView.swift in Sources */,
+				D94050322B31C82E0063E278 /* DataViewModel.swift in Sources */,
+				D961DAE82B31A5C1004238DA /* App.swift in Sources */,
+				D940501F2B31A8270063E278 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +362,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,9 +371,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sementa.com.Euro2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,8 +394,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,9 +403,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sementa.com.Euro2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
